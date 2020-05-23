@@ -1,0 +1,73 @@
+body {
+    background-color: #f7f7f7;
+    text-align: justify;
+    margin: 0 auto 0 auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    display: grid;
+    grid-template-rows: 70px auto 50px;
+    grid-template-columns: 250px auto 250px;
+    grid-template-areas: "header header header" "aside-esquerdo main aside-direito" "footer footer footer";
+}
+
+@media (max-width: 1000px) {
+    body {
+        grid-template-columns: 0 auto 0;
+    }
+}
+
+@media (min-height: 400px) {
+
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    footer {
+        position: sticky;
+        bottom: 0;
+    }
+}
+
+header {
+    grid-area: header;
+	background-color: #b3b3b3;
+    text-align: center;
+    border-bottom-style: ridge;
+}
+
+main {
+    grid-area: main;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: calc(100vh - 70px - 50px - 2 * 20px);
+    padding: 20px 50px;
+}
+
+aside {
+	background-color: #e3e3e3;
+}
+
+aside.esquerdo {
+    grid-area: aside-esquerdo;
+}
+
+aside.direito {
+    grid-area: aside-direito;
+}
+
+footer {
+    grid-area: footer;
+	background-color: #b3b3b3;
+    border-top-style: ridge;
+    padding: .7rem 1rem;
+}
+
+div.imagem {
+    text-align: center;
+    margin: 2rem 0 2rem 0;
+}
+
+div.imagem > img {
+    max-width: calc(100vw - 2 * 50px);
+}
